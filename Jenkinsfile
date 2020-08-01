@@ -35,7 +35,6 @@ node {
 
           bat 'npm test --progress=false --watch false'
         }
-        junit '**/test-results.xml'
     }
 
     stage('Lint') {
