@@ -31,7 +31,7 @@ node {
     }
 
     stage('Build') {
-        bat 'npm run build --prod --aot --sm --progress=false'
+        bat 'npm run build'
     }
 
 
