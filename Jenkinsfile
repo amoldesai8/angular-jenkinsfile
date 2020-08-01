@@ -32,6 +32,7 @@ node {
 
     stage('Test') {
         withEnv(["CHROME_BIN=/usr/bin/chromium-browser"]) {
+          bat 'npm -g @angular/cli'  
           bat 'ng test --progress=false --watch false'
         }
         junit '**/test-results.xml'
