@@ -31,6 +31,7 @@ node {
     }
 
     stage('Build') {
+        bat 'npm install -g @angular/cli'
         bat 'ng build'
     }
 
