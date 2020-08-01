@@ -41,7 +41,7 @@ node {
 
     stage('Build') {
         milestone()
-        bat 'npm build --prod --aot --sm --progress=false'
+        bat 'npm run build --prod --aot --sm --progress=false'
     }
 
 
