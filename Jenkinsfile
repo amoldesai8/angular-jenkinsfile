@@ -30,15 +30,6 @@ node {
         }
     }
 
-    stage('Test') {
-        withEnv(["CHROME_BIN=/usr/bin/chromium-browser"]) {
-
-          bat 'npm test --progress=false --watch false'
-        }
-    }
-
-
-
     stage('Build') {
         bat 'npm run build --prod --aot --sm --progress=false'
     }
