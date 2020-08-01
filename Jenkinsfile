@@ -31,7 +31,7 @@ node {
     }
 
     stage('Build') {
-        bat 'npm run build'
+        bat 'ng build'
     }
 
 
