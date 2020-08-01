@@ -37,9 +37,7 @@ node {
         }
     }
 
-    stage('Lint') {
-        bat 'npm lint'
-    }
+
 
     stage('Build') {
         milestone()
