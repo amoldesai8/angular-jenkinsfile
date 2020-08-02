@@ -23,6 +23,14 @@ node {
         bat 'npm install -g @angular/cli'
         bat 'npm run build --prod'
     }
+      stage('Deploy') {
+          
+          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awsCreds', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) 
+          {
+              s3Delete(bucket: 's3jenkinstesting', path:'**/*')
+              s3Upload(bucket: 's3jenkinstesting', workingDir:'build', includePathPattern:'**/*');
+            }
 
+      } 
 
 }
