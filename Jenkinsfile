@@ -28,7 +28,7 @@ node {
         withAWS(credentials: 'awsCreds', region: 'ap-south-1') {
             
             s3Delete bucket: 's3jenkinstesting', path: '**/*'
-            s3Upload bucket: 's3jenkinstesting', includePathPattern: '**/*'
+            s3Upload bucket: 's3jenkinstesting', file: 'dist', path: '**/*'
     // some block
                 }
 
